@@ -43,12 +43,14 @@ function loadAllSound() {
 
 function playEatingSound() { 
 	if (isAvailableSound()) { 
-		if ( !EATING_SOUND_LOOPING ) { 
-			EATING_SOUND_LOOPING = true;
+		if ( !EATING_SOUND_LOOPING ) {
+			try {
+				EATING_SOUND_LOOPING = true;
 			
-			EATING_SOUND.setSpeed(1.35);
-			EATING_SOUND.loop();
-			EATING_SOUND.play();
+				EATING_SOUND.setSpeed(1.35);
+				EATING_SOUND.loop();
+				EATING_SOUND.play();
+			} catch (e) {};
 		}
 	}
 }
@@ -63,23 +65,31 @@ function stopEatingSound() {
 
 function playExtraLifeSound() { 
 	if (isAvailableSound()) { 
-		EXTRA_LIFE_SOUND.play();
+		try {
+			EXTRA_LIFE_SOUND.play();
+		} catch (e) {};
 	}
 }
 
 function playEatFruitSound() { 
 	if (isAvailableSound()) { 
-		EAT_FRUIT_SOUND.play();
+		try {
+			EAT_FRUIT_SOUND.play();
+		} catch (e) {};
 	}
 }
 function playEatPillSound() { 
 	if (isAvailableSound()) { 
-		EAT_PILL_SOUND.play();
+		try {
+			EAT_PILL_SOUND.play();
+		} catch (e) {};
 	}
 }
 function playEatGhostSound() { 
-	if (isAvailableSound()) { 
-		EAT_GHOST_SOUND.play();
+	if (isAvailableSound()) {
+		try {
+			EAT_GHOST_SOUND.play();
+		} catch (e) {};
 	}
 }
 
@@ -88,7 +98,9 @@ function playWazaSound() {
 		stopSirenSound();
 		stopEatSound();
 		WAZA_SOUND.loop();
-		WAZA_SOUND.play();
+		try {
+			WAZA_SOUND.play();
+		} catch (e) {};
 	}
 }
 function stopWazaSound() { 
@@ -101,7 +113,9 @@ function playGhostEatenSound() {
 	if (isAvailableSound()) { 
 		stopSirenSound();
 		stopWazaSound();
-		GHOST_EATEN_SOUND.play();
+		try {
+			GHOST_EATEN_SOUND.play();
+		} catch (e) {};
 		GHOST_EATEN_SOUND.loop();
 	}
 }
@@ -115,8 +129,10 @@ function playSirenSound() {
 	if (isAvailableSound()) { 
 		stopWazaSound();
 		stopEatSound();
-		SIREN_SOUND.loop();
-		SIREN_SOUND.play();
+		try {
+			SIREN_SOUND.loop();
+			SIREN_SOUND.play();
+		} catch (e) {};
 	}
 }
 function stopSirenSound() { 
@@ -127,14 +143,18 @@ function stopSirenSound() {
 
 function playReadySound() { 
 	if (isAvailableSound()) { 
-		READY_SOUND.play();
+		try {
+			READY_SOUND.play();
+		} catch (e) {};
 	}
 }
 
 function playDieSound() { 
 	if (isAvailableSound()) { 
 		GROUP_SOUND.stop();
-		DIE_SOUND.play();
+		try {
+			DIE_SOUND.play();
+		} catch (e) {};
 	}
 }
 
