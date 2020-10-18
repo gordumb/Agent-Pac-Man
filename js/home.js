@@ -125,7 +125,7 @@ function initHome() {
 	drawHelperGhost(ctx, 25, 25, 1, 0, 0, 0);
 	
 	startPresentation();
-	setTimeout(simulateKeydown, 1000, 13);
+	setTimeout(simulateKeydown, 25000, 13);
 }
 
 function startPresentation() { 
